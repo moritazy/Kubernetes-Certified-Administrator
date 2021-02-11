@@ -51,7 +51,8 @@ vagrant init my-box
 Config.vm.network - Configures networks on the machine.  
 ```
 Vagrant.configure("2") do |config|
-	config.vm.network "public_network"
+  config.vm.network "private_network", type: "dhcp"
+  config.vm.network "forwarded_port", guest: 6443, host: 6443
 end
 ```
 # Vagrant Resources
@@ -61,6 +62,11 @@ Config.vm.provider - Configures resources on the machine.
   config.vm.provider "virtualbox" do |v|
     v.memory = 2048
     v.cpus = 2
+```
+
+# Update Base box 
+```
+config.vm.box = "my-box"
 ```
 
 # Vagrant volume
