@@ -45,7 +45,7 @@ sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
 # Set up Kubernetes
 NODENAME=$(hostname -s)
 # Writing the IP address to a file in the shared folder
-kubeadm config images pull --kubernetes-version=v1.18.0 --apiserver-cert-extra-sans=127.0.0.1
+kubeadm config images pull --kubernetes-version=v1.18.0
 useradd -m -s /bin/bash -U anisa
 echo 'anisa:qazwsx' | chpasswd
 echo 'vagrant ALL=(ALL) NOPASSWD:ALL' > /etc/sudoers.d/anisa
