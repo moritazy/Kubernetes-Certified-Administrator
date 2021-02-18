@@ -51,7 +51,7 @@ sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
 # Set up Kubernetes
 set -e
 kubeadm config images pull --kubernetes-version=v1.18.0
-kubeadm init --apiserver-cert-extra-sans=$IPADDR --kubernetes-version=v1.18.0
+kubeadm init --apiserver-cert-extra-sans=127.0.0.1 --kubernetes-version=v1.18.0
 # Set up admin creds for the vagrant user
 echo Copying credentials to /home/vagrant...
 sudo mkdir -p /root/.kube
