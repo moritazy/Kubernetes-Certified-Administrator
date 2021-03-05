@@ -1,0 +1,10 @@
+---
+- name: Set DNS in systemd-resolve configs
+  ansible.builtin.lineinfile:
+    path: /etc/systemd/resolved.conf
+    regexp: '^DNS='
+    line: DNS={{dns_servers}}
+  notify:
+    - restart resolved
+  tags: dns
+
