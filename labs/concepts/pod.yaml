@@ -5,7 +5,7 @@ metadata:
 spec:
   containers:
     - name: nginx
-      image: nginx:latest
+      image: dockerhub.ir/nginx:latest
       ports:
         - containerPort: 80
       imagePullPolicy: Always

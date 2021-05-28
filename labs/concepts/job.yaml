@@ -7,7 +7,7 @@ spec:
     spec:
       containers:
       - name: pi
-        image: perl:slim-stretch
+        image: dockerhub.ir/perl:slim-stretch
         command: ["perl",  "-Mbignum=bpi", "-wle", "print bpi(2000)"]
       restartPolicy: Never
   backoffLimit: 4
