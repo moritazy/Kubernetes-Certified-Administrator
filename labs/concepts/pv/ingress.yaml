@@ -1,0 +1,14 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-web-front
+spec:
+  rules:
+  - host: "bar.foo.com"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/test"
+        backend:
+          serviceName: frontend-service
+          servicePort: 80
