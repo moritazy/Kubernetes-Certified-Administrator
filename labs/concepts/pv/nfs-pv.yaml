@@ -6,7 +6,7 @@ spec:
   capacity:
     storage: 1Mi
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   nfs:
     server: 172.28.128.1
     path: "/mnt/nfs_share"

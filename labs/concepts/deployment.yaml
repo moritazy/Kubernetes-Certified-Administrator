@@ -24,11 +24,20 @@ spec:
         type: front-end
     spec:
      containers:
-     - name: my-container
-       image: adongy/hostname-docker
-       ports:
-         - containerPort: 3000
      - name: nginx
-       image: nginx
+       image: dockerhub.ir/nginx
        ports:
          - containerPort: 8080
+#     tolerations:
+#       - key: "app"
+#         operator: "Equal"
+#         value: "blue"
+#         effect: "NoSchedule"
+#       - key: "tier"
+#         operator: "Equal"
+#         value: "frontend"
+#         effect: "NoSchedule"
+#       - key: "tier"
+#         operator: "Equal"
+#         value: "frontend"
+#         effect: "NoExecute"
