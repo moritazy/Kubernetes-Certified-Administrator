@@ -74,7 +74,7 @@ kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
 kubectl taint nodes --all node-role.kubernetes.io/master-
 
 token=`kubeadm token generate`
-kubeadm token create $token --print-join-command | grep kubeadm | tee -a /vagrant/join.sh
+kubeadm token create $token --print-join-command | grep kubeadm | tee /vagrant/join.sh
 SCRIPT
 
 # Join Slave Nodes
