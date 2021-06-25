@@ -70,7 +70,9 @@ chown $(id -u vagrant):$(id -g vagrant) /root/.kube/config
 cp /etc/kubernetes/admin.conf /vagrant/
 
 #Install Calico CNI
-kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
+wget https://docs.projectcalico.org/manifests/calico.yaml
+sed -i 's/docker.io/dockerhub.ir/g' calico.yaml
+kubectl apply -f calico.yaml
 kubectl taint nodes --all node-role.kubernetes.io/master-
 
 token=`kubeadm token generate`
